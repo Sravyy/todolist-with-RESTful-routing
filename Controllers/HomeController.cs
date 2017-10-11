@@ -13,6 +13,13 @@ namespace ToDoList.Controllers
             return View();
         }
 
+        [HttpGet("/tasks")]
+        public ActionResult Tasks()
+        {
+            List<Task> allTasks = Task.GetAll();
+            return View(allTasks);
+        }
+        
         [HttpGet("/tasks/new")]
         public ActionResult TaskForm()
 
